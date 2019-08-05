@@ -11,6 +11,8 @@ https://github.com/spring-projects/spring-petclinic
 git clone git clone https://github.com/nickhillMehta/PetClinic_Assessment.git
 
 4)These testcases are working against in-memory database (HSQLDB) which gets populated at startup with data when you build the petclnic  application.So Make sure that when you build the petclinic application, you see there is relevant data in the application by navigating across the application.
+5)3 different browser drivers(Chrome,Firefox,IE) are also there in the project folder/driver.Make sure these drivers are there before executing the testcases
+
 ----------------------------------------------------------------------------------------------------------------------------------------------
 Running the project:
 ** Execute TestNG.xml from the IDE like IntelliJ and you should see 7 main Testcases.but as they have different data provider instances, so in all 21 test cases should be executed.
