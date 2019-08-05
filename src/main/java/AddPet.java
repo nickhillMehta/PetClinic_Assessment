@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.support.PageFactory;
+
 public class AddPet {
 
     WebDriver driver;
@@ -35,17 +36,18 @@ public class AddPet {
     WebElement petType_drpdwn;
 
 
-
     public AddPet(WebDriver driver) {
         this.driver = driver;
 
         PageFactory.initElements(driver, this); // This initElements method will create all WebElements
 
     }
+
     public void setPetName(String strname) {
 
         petname_txtfld.sendKeys(strname);
     }
+
     public void setpetBdate(String strdate) {
 
         bdate_fld.sendKeys(strdate);
@@ -67,10 +69,12 @@ public class AddPet {
         updatePet_btn.click();
 
     }
+
     public void updatePetName(String strname) {
         petname_txtfld.clear();
         petname_txtfld.sendKeys(strname);
     }
+
     public void updatepetBdate(String strdate) {
         bdate_fld.clear();
         bdate_fld.sendKeys(strdate);

@@ -1,6 +1,7 @@
 /**
  * Created by mehtani on 01.08.2019.
  */
+
 import java.awt.Color;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -8,7 +9,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Arrays;
-
 
 
 import org.testng.ITestContext;
@@ -62,7 +62,7 @@ public class Customised_Report implements ITestListener {
 
 
     public void onTestSuccess(ITestResult result) {
-        log("onTestSuccess("+result+")");
+        log("onTestSuccess(" + result + ")");
 
         if (successTable == null) {
             this.successTable = new PdfPTable(new float[]{.3f, .3f, .1f, .3f});
@@ -73,25 +73,25 @@ public class Customised_Report implements ITestListener {
             cell.setBackgroundColor(Color.GREEN);
             this.successTable.addCell(cell);
 
-            cell = new PdfPCell(new Paragraph("Class",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Class", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.successTable.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Method",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Method", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.successTable.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Time (ms)",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Time (ms)", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.successTable.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Exception",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Exception", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.successTable.addCell(cell);
         }
 
         PdfPCell cell = new PdfPCell(new Paragraph(result.getTestClass().toString()));
         this.successTable.addCell(cell);
-        cell = new PdfPCell(new Paragraph(result.getName().toString()+Arrays.toString(result.getParameters())));
+        cell = new PdfPCell(new Paragraph(result.getName().toString() + Arrays.toString(result.getParameters())));
         this.successTable.addCell(cell);
-        cell = new PdfPCell(new Paragraph("" + (result.getEndMillis()-result.getStartMillis())));
+        cell = new PdfPCell(new Paragraph("" + (result.getEndMillis() - result.getStartMillis())));
         this.successTable.addCell(cell);
 
         Throwable throwable = result.getThrowable();
@@ -112,7 +112,7 @@ public class Customised_Report implements ITestListener {
 
     public void onTestFailure(ITestResult result) {
 
-        log("onTestFailure("+result+")");
+        log("onTestFailure(" + result + ")");
 
         if (this.failTable == null) {
             this.failTable = new PdfPTable(new float[]{.3f, .3f, .1f, .3f});
@@ -124,25 +124,25 @@ public class Customised_Report implements ITestListener {
             cell.setBackgroundColor(Color.RED);
             this.failTable.addCell(cell);
 
-            cell = new PdfPCell(new Paragraph("Class",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Class", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.failTable.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Method",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Method", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.failTable.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Time (ms)",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Time (ms)", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.failTable.addCell(cell);
-            cell = new PdfPCell(new Paragraph("Exception",new Font(Font.BOLD)));
+            cell = new PdfPCell(new Paragraph("Exception", new Font(Font.BOLD)));
             cell.setBackgroundColor(Color.LIGHT_GRAY);
             this.failTable.addCell(cell);
         }
 
         PdfPCell cell = new PdfPCell(new Paragraph(result.getTestClass().toString()));
         this.failTable.addCell(cell);
-        cell = new PdfPCell(new Paragraph(result.getName().toString()+Arrays.toString(result.getParameters())));
+        cell = new PdfPCell(new Paragraph(result.getName().toString() + Arrays.toString(result.getParameters())));
         this.failTable.addCell(cell);
-        cell = new PdfPCell(new Paragraph("" + (result.getEndMillis()-result.getStartMillis())));
+        cell = new PdfPCell(new Paragraph("" + (result.getEndMillis() - result.getStartMillis())));
         this.failTable.addCell(cell);
         //String exception = result.getThrowable() == null ? "" : result.getThrowable().toString();
         //cell = new PdfPCell(new Paragraph(exception));
@@ -165,7 +165,7 @@ public class Customised_Report implements ITestListener {
 
 
     public void onTestSkipped(ITestResult result) {
-        log("onTestSkipped("+result+")");
+        log("onTestSkipped(" + result + ")");
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
@@ -174,11 +174,11 @@ public class Customised_Report implements ITestListener {
 
 
     public void onStart(ITestContext context) {
-        log("onStart("+context+")");
+        log("onStart(" + context + ")");
 
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         try {
-            PdfWriter.getInstance(this.document, new FileOutputStream("Report_"+context.getName()+"_"+timeStamp+".pdf"));
+            PdfWriter.getInstance(this.document, new FileOutputStream("Report_" + context.getName() + "_" + timeStamp + ".pdf"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -197,7 +197,7 @@ public class Customised_Report implements ITestListener {
 
 
     public void onFinish(ITestContext context) {
-        log("onFinish("+context+")");
+        log("onFinish(" + context + ")");
 
         try {
             if (this.failTable != null) {
@@ -222,14 +222,14 @@ public class Customised_Report implements ITestListener {
         try {
             this.document.add(p);
         } catch (DocumentException e1) {
-           // e1.printStackTrace();
+            // e1.printStackTrace();
         }
 
         Set<Integer> keys = this.throwableMap.keySet();
 
         assert keys.size() == this.nbExceptions;
 
-        for(Integer key : keys) {
+        for (Integer key : keys) {
             Throwable throwable = this.throwableMap.get(key);
 
             Chunk chunk = new Chunk(throwable.toString(),
@@ -244,7 +244,7 @@ public class Customised_Report implements ITestListener {
 
             StackTraceElement[] elems = throwable.getStackTrace();
             String exception = "";
-            for(StackTraceElement ste : elems) {
+            for (StackTraceElement ste : elems) {
                 Paragraph throwParagraph = new Paragraph(ste.toString());
                 try {
                     this.document.add(throwParagraph);
@@ -259,6 +259,7 @@ public class Customised_Report implements ITestListener {
 
     /**
      * log
+     *
      * @param o
      */
     public static void log(Object o) {

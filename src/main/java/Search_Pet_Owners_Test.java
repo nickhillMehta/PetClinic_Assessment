@@ -41,11 +41,7 @@ public class Search_Pet_Owners_Test {
     DisplayandAdd_Visits displayandAddVisits;
     Veterinarians_List vetList;
 
-    @BeforeClass
-    public void setUpBeforeClass() throws Exception {
-
-    }
-
+    //SearchOwnerTest method is used for Searching the existing owner  as send by testdata
 
     @Test(dataProvider = "data-provider", testName = "SearchOwner_Test")
     public void SearchOwnerTest(String name, int expectedResult, String browser, String Url) {

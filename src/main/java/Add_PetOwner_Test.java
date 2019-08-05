@@ -39,10 +39,7 @@ public class Add_PetOwner_Test {
     DisplayandAdd_Visits displayandAddVisits;
     Veterinarians_List vetList;
 
-    @BeforeClass
-    public void setUpBeforeClass() throws Exception {
-
-    }
+    //AddnewPetOwnerTest method is used for adding petOwner  as send by testdata
 
     @Test(dataProvider = "data-provider", testName = "AddOwner_Test")
     public void AddnewPetOwnerTest(String firstname, String lastname, String address, String city, String phonenumber, int expectedResult, String browser, String Url) {

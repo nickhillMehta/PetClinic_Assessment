@@ -38,10 +38,8 @@ public class SearchandEditOwner_Test {
     DisplayandAdd_Visits displayandAddVisits;
     Veterinarians_List vetList;
 
-    @BeforeClass
-    public void setUpBeforeClass() throws Exception {
-
-    }
+    //SearchandEditOwnerTest method is used for Searching the existing owner and then editing the information as send by testdata
+    //Also not every field is changed.test data passed is in such a way that only city name is changed with every run
 
     @Test(dataProvider = "data-provider", testName = "SearchandEditOwner_Test")
     public void SearchandEditOwnerTest(String firstname, String lastname, String address, String city, String phonenumber, int expectedResult, String browser, String Url) {

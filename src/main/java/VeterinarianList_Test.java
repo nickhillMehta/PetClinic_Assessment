@@ -26,10 +26,7 @@ public class VeterinarianList_Test {
 
     Veterinarians_List vetList;
 
-    @BeforeClass
-    public void setUpBeforeClass() throws Exception {
 
-    }
 
     @Test(dataProvider = "data-provider", testName = "VetList_Test")
     public void SearchVetListTest(String name, String speciality,  int expectedResult, String browser, String Url) {

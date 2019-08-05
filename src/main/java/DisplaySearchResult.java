@@ -21,7 +21,7 @@ public class DisplaySearchResult {
     WebElement owner_table;
 
     @FindBys(value = @FindBy(id = "owners"))
-    List<WebElement> is_resultTabPresent ;
+    List<WebElement> is_resultTabPresent;
 
     //@FindBy(css = "#search-owner-form > div:nth-child(2) > div > button")
     //WebElement find_btn;
@@ -36,21 +36,20 @@ public class DisplaySearchResult {
 
     }
 
-    boolean is_ResultTablePresent()
-    {
-        return is_resultTabPresent.size()> 0 ;
+    boolean is_ResultTablePresent() {
+        return is_resultTabPresent.size() > 0;
     }
     // display result
 
     public int getResult() {
 
-        List <WebElement> head = owner_table.findElements(By.xpath("//*[@id=\"owners\"]/thead")) ;
+        List<WebElement> head = owner_table.findElements(By.xpath("//*[@id=\"owners\"]/thead"));
 
-        List <WebElement> rows = owner_table.findElements(By.xpath("//*[@id=\"owners\"]/tbody/tr"));
-        if(rows.size()>=1) {
+        List<WebElement> rows = owner_table.findElements(By.xpath("//*[@id=\"owners\"]/tbody/tr"));
+        if (rows.size() >= 1) {
 
-                System.out.println(owner_table.findElement(By.xpath("//*[@id=\"owners\"]/thead/tr")).getText());
-                //System.out.println(columns.size());
+            System.out.println(owner_table.findElement(By.xpath("//*[@id=\"owners\"]/thead/tr")).getText());
+            //System.out.println(columns.size());
 
             for (int j = 0; j < rows.size(); j++) {
                 System.out.println(rows.get(j).getText());
@@ -58,22 +57,20 @@ public class DisplaySearchResult {
             }
 
             return 1;
-        }
-        else
+        } else
             return 0;
 
     }
     // Match result based on name and phone
 
-    public int clickFind(String name,String phone) {
-        List <WebElement> rows = owner_table.findElements(By.xpath("//*[@id=\"owners\"]/tbody/tr"));
-        for(int j = 1; j <= rows.size(); j++) {
-            System.out.println(":"+owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr["+j+"]/td[1]/a")).getText()+":");
-            System.out.println(":"+owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr["+j+"]/td[4]")).getText()+":");
-            if(name.equals(owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr["+j+"]/td[1]/a")).getText()) && phone.equals(owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr["+j+"]/td[4]")).getText()))
-            {
+    public int clickFind(String name, String phone) {
+        List<WebElement> rows = owner_table.findElements(By.xpath("//*[@id=\"owners\"]/tbody/tr"));
+        for (int j = 1; j <= rows.size(); j++) {
+            System.out.println(":" + owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr[" + j + "]/td[1]/a")).getText() + ":");
+            System.out.println(":" + owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr[" + j + "]/td[4]")).getText() + ":");
+            if (name.equals(owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr[" + j + "]/td[1]/a")).getText()) && phone.equals(owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr[" + j + "]/td[4]")).getText())) {
                 System.out.println("Inside condition");
-                owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr["+j+"]/td[1]/a")).click();
+                owner_table.findElement(By.xpath("//*[@id=\"owners\"]/tbody/tr[" + j + "]/td[1]/a")).click();
                 return 1;
             }
 
@@ -81,7 +78,7 @@ public class DisplaySearchResult {
         return 0;
 
     }
-	/*
+    /*
 	public void click_addOwner() {
 
 		addOwner_btn.click();

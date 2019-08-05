@@ -25,7 +25,7 @@ public class AddandFind_Owners {
     WebElement addOwner_btn;
 
     @FindBys(value = @FindBy(css = "#lastNameGroup > div > span > div > p"))
-    List<WebElement> validation_Err ;
+    List<WebElement> validation_Err;
 
     public AddandFind_Owners(WebDriver driver) {
         this.driver = driver;
@@ -54,9 +54,8 @@ public class AddandFind_Owners {
 
     }
 
-    boolean is_validationTextPresent()
-    {
-        return validation_Err.size()> 0 ;
+    boolean is_validationTextPresent() {
+        return validation_Err.size() > 0;
     }
 
     public void findbyLastname(String strlname) {

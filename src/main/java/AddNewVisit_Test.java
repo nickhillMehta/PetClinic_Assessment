@@ -38,10 +38,7 @@ public class AddNewVisit_Test {
     DisplayandAdd_Visits displayandAddVisits;
     Veterinarians_List vetList;
 
-    @BeforeClass
-    public void setUpBeforeClass() throws Exception {
 
-    }
 
     @Test(dataProvider = "data-provider", testName = "AddnewPetVisit_Test")
     public void AddnewVisitTest(String firstname, String lastname, String address, String city, String phonenumber, String petname, String bdate, String type, String visitdate, String description, int expectedResult, String browser, String Url) {

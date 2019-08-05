@@ -37,10 +37,10 @@ public class Add_OwnerInformation {
     WebElement editowner_btn;
 
     @FindBys(value = @FindBy(css = "#add-owner-form > div.form-group.has-feedback > div.form-group.has-error > div > span.glyphicon.glyphicon-remove.form-control-feedback"))
-    List<WebElement> is_redCrossPresent ;
+    List<WebElement> is_redCrossPresent;
 
     @FindBys(value = @FindBy(css = "#add-owner-form > div.form-group.has-feedback > div.form-group.has-error > div > span.help-inline"))
-    List<WebElement> is_phoneNumValidationPresent ;
+    List<WebElement> is_phoneNumValidationPresent;
 
     public Add_OwnerInformation(WebDriver driver) {
         this.driver = driver;
@@ -53,18 +53,22 @@ public class Add_OwnerInformation {
 
         firstname_txtfld.sendKeys(strfname);
     }
+
     public void setLname(String strlname) {
 
         lastname_txtfld.sendKeys(strlname);
     }
+
     public void setAddress(String straddress) {
 
         address_txtfld.sendKeys(straddress);
     }
+
     public void setCity(String strlcity) {
 
         city_txtfld.sendKeys(strlcity);
     }
+
     public void setPhone(String strphone) {
 
         telephone_txtfld.sendKeys(strphone);
@@ -78,13 +82,11 @@ public class Add_OwnerInformation {
 
     }
 
-    public boolean isRedCrossPresent()
-    {
+    public boolean isRedCrossPresent() {
         return is_redCrossPresent.size() > 0;
     }
 
-    public boolean isValidationErrPresent()
-    {
+    public boolean isValidationErrPresent() {
 
         return is_phoneNumValidationPresent.size() > 0;
     }
@@ -93,18 +95,22 @@ public class Add_OwnerInformation {
         firstname_txtfld.clear();
         firstname_txtfld.sendKeys(strfname);
     }
+
     public void editLname(String strlname) {
         lastname_txtfld.clear();
         lastname_txtfld.sendKeys(strlname);
     }
+
     public void editAddress(String straddress) {
         address_txtfld.clear();
         address_txtfld.sendKeys(straddress);
     }
+
     public void editCity(String strlcity) {
         city_txtfld.clear();
         city_txtfld.sendKeys(strlcity);
     }
+
     public void editPhone(String strphone) {
         telephone_txtfld.clear();
         telephone_txtfld.sendKeys(strphone);

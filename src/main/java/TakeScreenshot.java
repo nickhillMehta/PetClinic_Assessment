@@ -12,29 +12,29 @@ import java.util.Date;
  * Created by mehtani on 02.08.2019.
  */
 public class TakeScreenshot {
- WebDriver driver;
+    WebDriver driver;
 
- public TakeScreenshot(WebDriver driver)
- {
-     this.driver = driver;
- }
+    public TakeScreenshot(WebDriver driver) {
+        this.driver = driver;
+    }
 
- public void capture(String path,String name){
-     TakesScreenshot scrShot =((TakesScreenshot)driver);
+    public void capture(String path, String name) {
+        TakesScreenshot scrShot = ((TakesScreenshot) driver);
 
-     //Call getScreenshotAs method to create image file
-     System.out.println("Inside capture:"+path+name);
-     File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        //Call getScreenshotAs method to create image file
+        System.out.println("Inside capture:" + path + name);
+        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 
-     //Move image file to new destination
-     String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-     File DestFile=new File(System.getProperty("user.dir")+"\\"+path+"\\screenshot_"+name+timeStamp+".png");
+        //Move image file to new destination
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        File DestFile = new File(System.getProperty("user.dir") + "\\" + path + "\\screenshot_" + name + timeStamp + ".png");
 
-     //Copy file at destination
-     try{
-         FileUtils.copyFile(SrcFile, DestFile);
-     } catch (IOException e) {
-         e.printStackTrace();
-     }}
+        //Copy file at destination
+        try {
+            FileUtils.copyFile(SrcFile, DestFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
