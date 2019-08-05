@@ -8,10 +8,9 @@ https://github.com/spring-projects/spring-petclinic
 2)Make sure application is running at : http://localhost:8080/
 
 3)Download this project on your local environment via any IDE for example Eclipse or IntelliJ which has TestNG support.
+4)This testcases are working against in-memory database (HSQLDB) which gets populated at startup with data when you build the petclnic  application.So Make sure that when you build the petclinic application, you see there is relevant data in the application by navigating across the application.
 
-4) Execute TestNG.xml from the IDE and you should see 7 main Testcases.but as they have different data provider isntances, so in all 21 test cases should be executed.
+** Execute TestNG.xml from the IDE and you should see 7 main Testcases.but as they have different data provider isntances, so in all 21 test cases should be executed.
 
-5) This testcases are working against in-memory database (HSQLDB) which gets populated at startup with data when you build the petclnic  application.
-
-6) Tests are built in such a way that they will execute any number of times.
+** Tests are built in such a way that they will execute any number of times.
 
