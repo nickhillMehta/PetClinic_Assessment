@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestAll" thread-count="15" parallel="tests" data-provider-thread-count="15">
+<test name="Search_Pet_Owners_Test">
+<classes>
+    <class name="Search_Pet_Owners_Test" />
+</classes>
+</test>
+    <test name="Add_PetOwner_Test">
+        <classes>
+            <class name="Add_PetOwner_Test" />
+        </classes>
+    </test>
+    <test name="AddNewPet_Test">
+        <classes>
+            <class name="AddNewPet_Test" />
+        </classes>
+    </test>
+    <test name="AddNewVisit_Test">
+        <classes>
+            <class name="AddNewVisit_Test" />
+        </classes>
+    </test>
+    <test name="EditPetInfo_Test">
+        <classes>
+            <class name="EditPetInfo_Test" />
+        </classes>
+    </test>
+    <test name="SearchandEditOwner_Test">
+        <classes>
+            <class name="SearchandEditOwner_Test" />
+        </classes>
+    </test>
+    <test name="VetList_Test">
+        <classes>
+            <class name="VeterinarianList_Test" />
+        </classes>
+    </test>
+</suite>
+

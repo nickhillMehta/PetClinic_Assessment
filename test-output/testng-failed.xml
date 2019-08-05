@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [TestAll]" parallel="methods">
+  <test thread-count="4" name="Search Pet Owners(failed)" parallel="methods">
+    <classes>
+      <class name="Search_Pet_Owners_Test">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="destroy"/>
+          <include name="SearchOwnerTest" invocation-numbers="2"/>
+        </methods>
+      </class> <!-- Search_Pet_Owners_Test -->
+    </classes>
+  </test> <!-- Search Pet Owners(failed) -->
+</suite> <!-- Failed suite [TestAll] -->
